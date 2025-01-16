@@ -2,6 +2,13 @@
 palette:
 	martine -kit ./assets/VACHE.KIT -info
 
+disk:
+	dsk -dsk vache.dsk -format
+
+include_files: disk
+	dsk -dsk vache.dsk -put -amsdosfile ./assets/VACHE.GO1 -type binary
+	dsk -dsk vache.dsk -put -amsdosfile ./assets/VACHE.GO2 -type binary
+
 compile: 
 	rasm main.asm -eo
 
